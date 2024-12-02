@@ -1,0 +1,30 @@
+<!DOCTYPE>
+<html>
+<head>
+<style>
+  a.zoom img {width: 10%;}
+  a.zoom img:hover {width: 100%;}
+</style>
+ 
+<script>
+// Muestra una pagina HTML en un popUp a pantalla completa
+function fullPopUp($html){
+  $w = (screen.width) ? (screen.width)/2 : 750;
+  $h = (screen.height) ? (screen.height)/1.6 : 800;
+  LeftPosition = (screen.width) ? (screen.width-$w)/2 : 0;
+  TopPosition = (screen.height) ? (screen.height-$h)/2 : 0;
+  ventana = window.open($html, "replace", "toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=yes,resizable=no");
+  ventana.document.write('<html><head><title>ZOOM</title>');
+  ventana.document.write('<style>img {width:100%}</style>');
+  ventana.document.write('</head><body>');
+  ventana.document.write('<img src='+$html+'/>');
+  ventana.document.write('</body></html>');
+  ventana.document.close();
+}
+</script>
+ 
+</head>
+<body>
+  <a class="zoom" href="sf.jpeg"><img src="sf.jpeg" alt=""></a>
+</body>
+</html>
